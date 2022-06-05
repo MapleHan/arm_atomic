@@ -143,23 +143,23 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
    // Test 1, Normal Access
-    if( Main_Cnt < TEST_COUNT )
-	{
-		Test_Value ++;
-		Main_Cnt++;
-	}
-	else
-	{
-		char buf[30];
-		memset(buf, '\0', 30);
-		sprintf(buf, "%d Test_cnt:%ld\r\n", HAL_GetTick(), Test_Value);
-		HAL_UART_Transmit(&huart2, (uint8_t *)buf, strlen(buf), 100);
-		HAL_Delay(20000000);
-		Test_Value = 0;
-	}
-	// delay
-	uint8_t del_cnt = 10;
-	while(del_cnt--) ;
+//     if( Main_Cnt < TEST_COUNT )
+// 	{
+// 		Test_Value ++;
+// 		Main_Cnt++;
+// 	}
+// 	else
+// 	{
+// 		char buf[30];
+// 		memset(buf, '\0', 30);
+// 		sprintf(buf, "%d Test_cnt:%ld\r\n", HAL_GetTick(), Test_Value);
+// 		HAL_UART_Transmit(&huart2, (uint8_t *)buf, strlen(buf), 100);
+// 		HAL_Delay(20000000);
+// 		Test_Value = 0;
+// 	}
+// 	// delay
+// 	uint8_t del_cnt = 10;
+// 	while(del_cnt--) ;
     
     // Test 2, Mutual Exclusive Access
 	if(Sys_GetLockOnce(&Sys_Lock))
